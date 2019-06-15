@@ -1,19 +1,43 @@
-package com.sprintboot.thymeleafdemo.model;
+package com.sprintboot.thymeleafdemo.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "employee")
 public class Employee {
 
-	//ATTRIBUTES
+	// DEFINE FIELDS
+	@Id
+	@GeneratedValue()
+	@Column(name="id")
 	private int id;
+	
+	@Column(name="first_name")
 	private String firstName;
+	
+	@Column(name="last_name")
 	private String lastName;
+	
+	@Column(name="email")
 	private String email;
 	
-	//CONSTRUCTOR
+	// DEFINE CONSTRUCTOR
+	// NO ARGUMENT (ARG) CONSTRUCTOR - REQUIRE BY HIBERNATE
 	public Employee() {
 		
 	}
-
-	//CONSTRUCTOR - FIELDS
+	
+	// FIELDS CONTRUCTOR
+	public Employee(String firstName, String lastName, String email) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+	
 	public Employee(int id, String firstName, String lastName, String email) {
 		this.id = id;
 		this.firstName = firstName;
@@ -21,7 +45,7 @@ public class Employee {
 		this.email = email;
 	}
 
-	//GETTER AND SETTERS
+	// DEFINE GETTER / SETTERS
 	public int getId() {
 		return id;
 	}
@@ -54,10 +78,12 @@ public class Employee {
 		this.email = email;
 	}
 
+	// TOSTRING
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
+		
 	
 	
 	

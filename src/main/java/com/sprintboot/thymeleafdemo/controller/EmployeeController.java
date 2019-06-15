@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sprintboot.thymeleafdemo.model.Employee;
+import com.sprintboot.thymeleafdemo.entity.Employee;
 
 @Controller
 @RequestMapping("/employees")
