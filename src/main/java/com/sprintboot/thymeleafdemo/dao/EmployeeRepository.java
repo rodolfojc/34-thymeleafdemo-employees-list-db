@@ -6,4 +6,7 @@ import com.sprintboot.thymeleafdemo.entity.Employee;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
+	//ADDD METHOD TO SORT BY LAST NAME 
+	
+	
 }
